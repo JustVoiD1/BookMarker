@@ -44,7 +44,8 @@ npm install
 ### 3. Create a `.env` file
 
 ```bash
-npm install
+BOT_TOKEN=your-bot-token
+MONGODB_URI=your-connection-string
 ```
 
 ### 4. Start the bot locally
