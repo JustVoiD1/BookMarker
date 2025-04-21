@@ -33,3 +33,25 @@ BookMarker is a powerful and lightweight Telegram bot that helps you **save**, *
 ```bash
 git clone https://github.com/JustVoid1/bookmarker.git
 cd bookmarker
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Create a `.env` file
+
+```bash
+npm install
+```
+
+### 4. Start the bot locally
+
+```bash
+npm run dev
+```
+
+
+
