@@ -383,7 +383,7 @@ bot.command('category', async (ctx) => {
     try {
         const categories = [
             "YouTube", "Instagram", "Spotify", "Reddit", "X", "Facebook",
-            "GithHub", "LinkedIn", "Stack Overflow", "Wikipedia", "Vimeo",
+            "GitHub", "LinkedIn", "Stack Overflow", "Wikipedia", "Vimeo",
             "Amazon", "Twitch", "Pinterest", "Dropbox", "Flickr", "Quora",
             "TikTok", "Google Drive", "Medium", "Uncategorized"
         ];
@@ -403,12 +403,13 @@ bot.command('category', async (ctx) => {
 
 // Handle category selection
 bot.action(/^category_/, async (ctx) => {
+    const userId = ctx.from.id;
     try {
         // Extract the category from the callback data
         const category = ctx.update.callback_query.data.replace('category_', '');
 
         // Fetch the links for the selected category
-        const links = await eventModel.find({ category });
+        const links = await eventModel.find({ tgId: userId , category : category });
 
         if (links.length === 0) {
             await ctx.reply(`No links found in the *${category}* category.`);
